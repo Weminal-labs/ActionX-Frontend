@@ -7,13 +7,13 @@ import { usePathname } from "next/navigation";
 const CurrentPath = () => {
   const pathname = usePathname();
   const [apiAction, setApiAction] = useState("");
-  const [layoutProps, setLayoutProps] = useState<any>(null); // Thay thế 'any' bằng kiểu dữ liệu cụ thể nếu có
+  const [layoutProps, setLayoutProps] = useState<any>(null);
 
   useEffect(() => {
-    // Tách giá trị sau 'api-action=' bằng cách sử dụng split
     const parts = pathname.split("api-action=");
     if (parts.length > 1) {
-      setApiAction(parts[1]);
+      const decodedPath = decodeURIComponent(parts[1]);
+      setApiAction(decodedPath);
     }
   }, [pathname]);
 
@@ -22,7 +22,10 @@ const CurrentPath = () => {
       if (apiAction) {
         try {
           const response = await fetch(apiAction);
+          console.log("apiAction", apiAction);
+          console.log("response", response);
           const data = await response.json();
+          console.log("data", data);
           const mappedProps = mapApiResponseToLayoutProps(data);
           setLayoutProps(mappedProps);
         } catch (error) {
@@ -39,7 +42,7 @@ const CurrentPath = () => {
   }
 
   return (
-    <main className=" flex flex-1 flex-col items-center justify-center pt-4 lg:pt-0">
+    <main className="flex h-screen items-center justify-center pt-4 lg:pt-0">
       <div className="w-full max-w-md">
         <ActionLayout {...layoutProps} />
       </div>
