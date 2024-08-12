@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import acmeLogo from "@/assets/images/aptos-apt-logo.png";
 
