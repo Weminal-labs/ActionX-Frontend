@@ -9,7 +9,7 @@ import { ModeToggle } from "@/components/ui/toggle-theme";
 
 const menuItems = [
   { label: "About", path: "#" },
-  { label: "Actions new version ( is developing)", path: "/action" },
+  { label: "Actions new version (is developing)", path: "/action" },
   { label: "Actions", path: "/actions" },
   { label: "Updates", path: "#" },
 ];
@@ -38,15 +38,15 @@ export default function Header() {
               <MenuIcon className="text-white" />
             </div>
             <nav
-              className={`flex flex-col gap-6 items-center ${
-                isOpen ? "block" : "hidden"
-              } lg:flex justify-center absolute top-14 left-0 right-0 bg-black lg:static lg:bg-transparent z-10 p-4 lg:p-0`}
+              className={`${
+                isOpen ? "flex" : "hidden"
+              } lg:flex flex-col lg:flex-row gap-6 items-center justify-center absolute top-14 left-0 right-0 bg-black lg:static lg:bg-transparent z-10 p-4 lg:p-0`}
             >
               {menuItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.path}
-                  className="text-[#737373] font-semibold hover:text-opacity-100 transition block lg:inline-block py-2 lg:py-0"
+                  className="text-[#737373] font-semibold hover:text-opacity-100 transition py-2 lg:py-0 block lg:inline-block"
                 >
                   {item.label}
                 </Link>
