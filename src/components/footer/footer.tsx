@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="xl:flex-1">
           <Link href={"/"}>
             <span className="flex items-center relative">
-              <p className="text-3xl lg:text-4xl font-bold bg-logoGradient bg-clip-text text-transparent">
+              <p className="text-3xl lg:text-4xl font-bold bg-logoGradientDark bg-clip-text text-transparent">
                 ActionX
               </p>
             </span>
