@@ -48,7 +48,7 @@ export default function ActionPage() {
       <GridBackground>
         <div className="w-full h-full">
           <div className="flex flex-col justify-center items-center w-full h-full">
-            <div className="w-[55%] h-[9%] flex items-center justify-center mb-8">
+            <div className="w-[80%] xl:w-[55%] h-[9%] flex items-center justify-center mb-8">
               <PlaceholdersAndVanishInput
                 placeholders={placeholders}
                 onChange={handleChange}
