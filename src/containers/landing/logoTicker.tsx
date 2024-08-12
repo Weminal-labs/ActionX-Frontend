@@ -1,3 +1,4 @@
+"use client";
 import LogoCarousel from "@/components/companylogos";
 
 export const LogoTicker = () => {
