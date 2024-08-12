@@ -5,6 +5,7 @@ import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 
 // Import SVG dưới dạng React component
 import MenuIcon from "../../assets/icons/menu.svg";
+import { ModeToggle } from "@/components/ui/toggle-theme";
 
 const menuItems = [
   { label: "About", path: "#" },
@@ -24,7 +25,7 @@ export default function Header() {
             <div className="relative">
               <Link href={"/"}>
                 <span className="flex items-center relative">
-                  <p className="text-3xl lg:text-4xl font-bold bg-logoGradient bg-clip-text text-transparent">
+                  <p className="text-3xl lg:text-4xl font-bold bg-logoGradientDark bg-clip-text text-transparent">
                     ActionX
                   </p>
                 </span>
