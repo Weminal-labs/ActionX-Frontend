@@ -35,7 +35,8 @@ export default function ActionPage() {
     if (inputValue) {
       const data = await fetchActionData(inputValue);
       if (data) {
-        router.push(`/action/api-action=${inputValue}`);
+        const encodedInputValue = encodeURIComponent(inputValue);
+        router.push(`/action/api-action=${encodedInputValue}`);
       } else {
         setErrorMessage("Failed to validate URL");
       }
