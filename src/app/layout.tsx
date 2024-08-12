@@ -4,13 +4,10 @@ import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header/header";
-import { ThemeProvider } from "@/components/theme-provider";
 import { AutoConnectProvider } from "@/components/AutoConnectProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { WalletProvider } from "@/components/WalletProvider";
 import TopLoader from "@/components/TopLoader";
-import Footer from "@/components/footer/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,10 +42,8 @@ export default function RootLayout({
         <AutoConnectProvider>
           <WalletProvider>
             <TopLoader />
-            <Header />
             {children}
             <Toaster />
-            <Footer />
           </WalletProvider>
         </AutoConnectProvider>
       </body>
