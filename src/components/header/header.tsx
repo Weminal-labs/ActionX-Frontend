@@ -9,8 +9,7 @@ import { ModeToggle } from "@/components/ui/toggle-theme";
 
 const menuItems = [
   { label: "About", path: "#" },
-  { label: "Actions new version (is developing)", path: "/action" },
-  { label: "Actions", path: "/actions" },
+  { label: "Actions", path: "/action" },
   { label: "Updates", path: "#" },
 ];
 
