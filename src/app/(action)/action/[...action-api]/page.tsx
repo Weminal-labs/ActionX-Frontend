@@ -22,11 +22,9 @@ const CurrentPath = () => {
       if (apiAction) {
         try {
           const response = await fetch(apiAction);
-          console.log("apiAction", apiAction);
-          console.log("response", response);
           const data = await response.json();
-          console.log("data", data);
-          const mappedProps = mapApiResponseToLayoutProps(data);
+          const baseUrl = new URL(apiAction).origin;
+          const mappedProps = mapApiResponseToLayoutProps(data, baseUrl);
           setLayoutProps(mappedProps);
         } catch (error) {
           console.error("Error fetching API data:", error);
@@ -42,7 +40,7 @@ const CurrentPath = () => {
   }
 
   return (
-    <main className="flex h-screen items-center justify-center pt-4 lg:pt-0 dark:bg-black">
+    <main className="flex flex-1 flex-col items-center justify-center px-2 py-4 md:px-8 dark:bg-black">
       <div className="w-full max-w-md">
         <ActionLayout {...layoutProps} />
       </div>

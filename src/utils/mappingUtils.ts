@@ -36,7 +36,10 @@ export const createButton = (
 });
 
 // Function to map API response to LayoutProps
-export const mapApiResponseToLayoutProps = (apiResponse: any): LayoutProps => {
+export const mapApiResponseToLayoutProps = (
+  apiResponse: any,
+  baseUrl: string
+): LayoutProps => {
   const actionsWithParameters = apiResponse.links.actions.filter(
     isActionWithParameters
   );
@@ -52,8 +55,8 @@ export const mapApiResponseToLayoutProps = (apiResponse: any): LayoutProps => {
     description: apiResponse.description.trim(),
     image: apiResponse.icon,
     type: "trusted",
-    websiteUrl: apiResponse.links.actions[0]?.href,
-    websiteText: apiResponse.label,
+    websiteUrl: baseUrl,
+    websiteText: baseUrl,
     buttons: actionsWithoutParameters.map((action: any) => ({
       label: action.label,
       text: action.label,

@@ -8,7 +8,7 @@ import React from "react";
 
 export default function FooterActionpage() {
   return (
-    <div className="dark:bg-black pt-8">
+    <div className=" dark:bg-black pt-8">
       <div className="container ">
         <div className="flex flex-col-reverse items-center justify-between gap-6 truncate py-2 lg:flex-row lg:gap-4">
           <span className="text-subtext font-semibold text-tertiary">

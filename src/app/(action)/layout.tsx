@@ -16,7 +16,7 @@ export default function layout({
         disableTransitionOnChange
       >
         <HeaderActionPage />
-        {children}
+        <div className="flex min-h-screen flex-col">{children}</div>
         <FooterActionpage />
       </ThemeProvider>
     </div>
