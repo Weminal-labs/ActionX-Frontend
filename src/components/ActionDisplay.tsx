@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  InputTransactionData,
-  useWallet,
-} from "@aptos-labs/wallet-adapter-react";
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
 import { useToast } from "@/components/ui/use-toast";
 import Image from "next/image";
 import { InputAmount } from "@/components/ui/input-amount";
@@ -38,6 +35,7 @@ export function ActionDisplay({ data }: { data: ActionData }) {
   };
 
   const handleAction = async (amount: any) => {
+    console.log("account :", account);
     console.log("amount :", amount);
     if (!account) {
       toast({
