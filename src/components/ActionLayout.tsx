@@ -223,7 +223,7 @@ export const ActionLayout = ({
               </span>
             )}
             <a
-              href="https://docs.dialect.to/documentation/actions/security"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center"

@@ -104,6 +104,8 @@ const config = {
       },
       backgroundImage: {
         logoGradient:
+          "linear-gradient(45deg, #000 41.55%, #ff11 50.9%, #1F1C1C 90.42%)",
+        logoGradientDark:
           "linear-gradient(60deg, #fff 41.55%, #1F1C1C 58.9%, #fff 90.42%)",
         heroGradient:
           "linear-gradient(to bottom, #000, #200D42 34%, #4F21A1 65%, #A46EDB 82%)",
@@ -111,6 +113,10 @@ const config = {
       backgroundColor: {
         darkCard: "#15181C",
         buttonDarkCard: "#1DA1F2",
+      },
+      boxShadow: {
+        action:
+          "0px 2px 8px 0px rgba(62, 177, 255, .22), 0px 1px 48px 0px rgba(62, 177, 255, .24)",
       },
     },
   },

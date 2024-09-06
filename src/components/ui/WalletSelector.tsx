@@ -120,10 +120,10 @@ export function WalletSelector(walletSortingOptions: WalletSortingOptions) {
   ) : (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
-        <Button>
+        <button className="bg-black text-white dark:bg-white dark:text-black py-2 px-4 rounded-lg">
           <i className="fas fa-wallet mr-2"></i>
           <span>Connect a Wallet</span>
-        </Button>
+        </button>
       </DialogTrigger>
       <ConnectWalletDialog close={closeDialog} {...walletSortingOptions} />
     </Dialog>
