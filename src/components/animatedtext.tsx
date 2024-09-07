@@ -4,7 +4,7 @@ import { ChevronRight } from "lucide-react";
 import AnimatedGradientText from "./animatedgradienttext";
 import { cn } from "@/lib/utils";
 
-export async function AnimatedGradientTextDemo() {
+export function AnimatedGradientTextDemo() {
   return (
     <div className="z-1 flex -mt-9 items-center justify-center">
       <AnimatedGradientText>
