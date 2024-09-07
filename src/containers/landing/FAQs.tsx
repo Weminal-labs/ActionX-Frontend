@@ -5,24 +5,19 @@ import MinusIcon from "@/assets/icons/minus.svg";
 import { motion, AnimatePresence } from "framer-motion";
 const items = [
   {
-    question: "What payment methods do you accept?",
+    question: "Are multiple wallets supported?",
     answer:
-      "We accept all major credit cards, PayPal, and various other payment methods depending on your location. Please contact our support team for more information on accepted payment methods in your region.",
+      "We support wallets provided by APTOS, ensuring you can connect and complete transactions conveniently and securely.",
   },
   {
-    question: "How does the pricing work for teams?",
+    question: "How do I integrate the extension into my browser?",
     answer:
-      "Our pricing is per user, per month. This means you only pay for the number of team members you have on your account. Discounts are available for larger teams and annual subscriptions.",
+      "You can download the extension from the Chrome Web Store or our website and follow the simple installation instructions.",
   },
   {
-    question: "Can I change my plan later?",
+    question: "Is this extension secure?",
     answer:
-      "Yes, you can upgrade or downgrade your plan at any time. Changes to your plan will be prorated and reflected in your next billing cycle.",
-  },
-  {
-    question: "Is my data secure?",
-    answer:
-      "Security is our top priority. We use state-of-the-art encryption and comply with the best industry practices to ensure that your data is stored securely and accessed only by authorized users.",
+      "We prioritize user security and use advanced encryption to protect transaction information. However, you should review and confirm all transactions before proceeding.",
   },
 ];
 
