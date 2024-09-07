@@ -1,5 +1,5 @@
 "use client";
-import appScreen from "@/assets/images/product.avif";
+import appScreen from "@/assets/images/exampleCreateAction.jpg";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -19,13 +19,13 @@ export const ProductShowcase = () => {
         <h2 className="text-center text-5xl font-bold tracking-tighter">
           Intituve interface
         </h2>
-        <div className="max-w-xl mx-auto">
+        {/* <div className="max-w-xl mx-auto">
           <p className="text-xl text-white/70 text-center mt-5 ">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
             minima odio ea debitis quisquam nobis. Eius fugit ut dolorem
             delectus.
           </p>
-        </div>
+        </div> */}
         <div className="flex justify-center">
           <motion.div
             style={{
