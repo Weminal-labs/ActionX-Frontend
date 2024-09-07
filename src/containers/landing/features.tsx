@@ -15,7 +15,7 @@ export const Features = () => {
           </p>
         </div>
       </div>
-      <div className="overflow-hidden">
+      {/* <div className="overflow-hidden">
         <div className="h-full w-auto overflow-y-hidden items-center justify-center gap-4 mt-6">
           <Image
             className="hidden md:block"
@@ -30,7 +30,7 @@ export const Features = () => {
             loading="lazy"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
