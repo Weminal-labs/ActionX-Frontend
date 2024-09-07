@@ -1,23 +1,23 @@
-import type { ExtendedActionState } from '../api';
+import type { ExtendedActionState } from "../api/ActionsRegistry";
 
-export type SecurityLevel = 'only-trusted' | 'non-malicious' | 'all';
+export type SecurityLevel = "only-trusted" | "non-malicious" | "all";
 
 export const checkSecurity = (
   state: ExtendedActionState,
-  securityLevel: SecurityLevel,
+  securityLevel: SecurityLevel
 ): boolean => {
   switch (securityLevel) {
-    case 'only-trusted':
-      return state === 'trusted';
-    case 'non-malicious':
-      return state !== 'malicious';
-    case 'all':
+    case "only-trusted":
+      return state === "trusted";
+    case "non-malicious":
+      return state !== "malicious";
+    case "all":
       return true;
   }
 };
 
 export const isUrlSameOrigin = (origin: string, url: string): boolean => {
-  if (!url.startsWith('http')) {
+  if (!url.startsWith("http")) {
     return true;
   }
 
