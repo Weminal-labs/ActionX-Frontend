@@ -1,4 +1,4 @@
-import { SOLANA_APTOS_ACTION_PREFIX } from "@/utils/constants";
+import { APTOS_APTOS_ACTION_PREFIX } from "@/utils/constants";
 
 export type IsInterstitialResult =
   | {
@@ -19,12 +19,12 @@ export function isInterstitial(url: string | URL): IsInterstitialResult {
     }
     const urlDecodedActionUrl = decodeURIComponent(actionUrl);
 
-    if (!SOLANA_APTOS_ACTION_PREFIX.test(urlDecodedActionUrl)) {
+    if (!APTOS_APTOS_ACTION_PREFIX.test(urlDecodedActionUrl)) {
       return { isInterstitial: false };
     }
 
     const decodedActionUrl = urlDecodedActionUrl.replace(
-      SOLANA_APTOS_ACTION_PREFIX,
+      APTOS_APTOS_ACTION_PREFIX,
       ""
     );
 
