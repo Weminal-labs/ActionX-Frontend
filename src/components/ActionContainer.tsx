@@ -11,6 +11,7 @@ import { TransactionHash } from "@/components/TransactionHash";
 const ActionContainer = () => {
   const pathname = usePathname();
   const [apiAction, setApiAction] = useState("");
+  const [addressFromAction, setAddressFromAction] = useState("");
   const { toast } = useToast();
   const [layoutProps, setLayoutProps] = useState<LayoutProps | null>(null);
   const { account, network, signAndSubmitTransaction } = useWallet();
@@ -45,7 +46,7 @@ const ActionContainer = () => {
   });
 
   const handleActionClick = async (action: Action) => {
-    console.log("account :", account);
+    // console.log("account :", account);
     if (!account) {
       toast({
         title: "Error",
@@ -83,8 +84,7 @@ const ActionContainer = () => {
 
       const body = {
         fromAddress: account.address as string,
-        toAddress:
-          "0xe975d15fd30e20768cb5f2dc05d5966c31e235324bb2794e1c49df63c475799e",
+        toAddress: addressFromAction as string,
       };
 
       const response = await fetch(url, {
@@ -97,14 +97,12 @@ const ActionContainer = () => {
       });
 
       const result = await response.json();
-      console.log(result);
       const { transaction, message } = result;
-      console.log(transaction);
 
       const pendingTransaction = await signAndSubmitTransaction(transaction);
-      await aptosClient(network).waitForTransaction({
-        transactionHash: pendingTransaction.hash,
-      });
+      // await aptosClient(network).waitForTransaction({
+      //   transactionHash: pendingTransaction.hash,
+      // });
 
       toast({
         title: "Success",
@@ -160,22 +158,32 @@ const ActionContainer = () => {
     const parts = pathname.split("api-action=");
     if (parts.length > 1) {
       const decodedPath = decodeURIComponent(parts[1]);
-      setApiAction(decodedPath);
+      console.log("decodedPath :", decodedPath);
+      // tách ra để lấy link và address
+
+      const lastPartIndex = decodedPath.lastIndexOf("/");
+      const actionLink = decodedPath.substring(0, lastPartIndex + 1);
+      const addressFromLink = decodedPath.substring(
+        lastPartIndex + 1
+      ) as string;
+
+      setApiAction(actionLink);
+      setAddressFromAction(addressFromLink);
+      console.log("actionLink :", actionLink);
+      console.log("addressFromLink :", addressFromLink);
     }
   }, [pathname]);
 
   useEffect(() => {
     const fetchApiData = async () => {
-      if (apiAction) {
-        try {
-          const response = await fetch(apiAction);
-          const data = await response.json();
-          const baseUrl = new URL(apiAction).origin;
-          const mappedProps = mapApiResponseToLayoutProps(data, baseUrl);
-          setLayoutProps(mappedProps);
-        } catch (error) {
-          console.error("Error fetching API data:", error);
-        }
+      try {
+        const response = await fetch(apiAction);
+        const data = await response.json();
+        const baseUrl = new URL(apiAction).origin;
+        const mappedProps = mapApiResponseToLayoutProps(data, baseUrl);
+        setLayoutProps(mappedProps);
+      } catch (error) {
+        console.error("Error fetching API data:", error);
       }
     };
 

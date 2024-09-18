@@ -33,9 +33,12 @@ export default function ActionPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (inputValue) {
-      const data = await fetchActionData(inputValue);
+      const lastPartIndex = inputValue.lastIndexOf("/");
+      const actionLink = inputValue.substring(0, lastPartIndex + 1);
+      const data = await fetchActionData(actionLink);
       if (data) {
         const encodedInputValue = encodeURIComponent(inputValue);
+
         router.push(`/action/api-action=${encodedInputValue}`);
       } else {
         setErrorMessage("Failed to validate URL");
