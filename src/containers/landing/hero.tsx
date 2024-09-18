@@ -1,8 +1,4 @@
 "use client";
-import CursorImage from "@/assets/images/cursor.png";
-import MessageImage from "@/assets/images/message.png";
-import Image from "next/image";
-import { motion } from "framer-motion";
 import { AnimatedGradientTextDemo } from "@/components/animatedtext";
 import Link from "next/link";
 
@@ -21,34 +17,6 @@ export const Hero = () => {
             <h1 className="text-7xl sm:text-9xl font-bold tracking-tightner text-left inline-flex">
               ActionX <br /> Platform
             </h1>
-            <motion.div
-              className="absolute right-[550px] top-[108px] hidden sm:inline"
-              drag
-              dragSnapToOrigin
-            >
-              <Image
-                src={CursorImage}
-                alt="cursor"
-                height={200}
-                width={200}
-                className="max-w-none"
-                draggable="false"
-              />
-            </motion.div>
-            <motion.div
-              className="absolute left-[550px] top-[56px] hidden sm:inline"
-              drag
-              dragSnapToOrigin
-            >
-              <Image
-                src={MessageImage}
-                alt="cursor"
-                height={200}
-                width={200}
-                className="max-w-none"
-                draggable="false"
-              />
-            </motion.div>
           </div>
         </div>
         <div className="flex justify-center">
