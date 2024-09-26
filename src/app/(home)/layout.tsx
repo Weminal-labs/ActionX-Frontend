@@ -10,7 +10,7 @@ export default function layout({
     <div>
       <Header />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
