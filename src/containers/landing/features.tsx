@@ -15,22 +15,16 @@ export const Features = () => {
           </p>
         </div>
       </div>
-      {/* <div className="overflow-hidden">
-        <div className="h-full w-auto overflow-y-hidden items-center justify-center gap-4 mt-6">
-          <Image
-            className="hidden md:block"
-            src={Actions}
-            alt="Actions for anything"
-            loading="lazy"
-          />
-          <Image
-            className="md:hidden"
-            src={Actions1}
-            alt="Actions for anything"
-            loading="lazy"
-          />
-        </div>
-      </div> */}
+      <div className="flex justify-center mt-2">
+        <iframe
+          width="590"
+          height="345"
+          src="https://www.youtube.com/embed/_2uPmdfSVmk"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
     </div>
   );
 };
