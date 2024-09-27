@@ -8,9 +8,9 @@ import MenuIcon from "../../assets/icons/menu.svg";
 import { ModeToggle } from "@/components/ui/toggle-theme";
 
 const menuItems = [
-  { label: "About", path: "#" },
-  { label: "Actions", path: "/action" },
-  { label: "Updates", path: "#" },
+  { label: "Documentation", path: "#" },
+  { label: "Create actions", path: "/create" },
+  { label: "Demo", path: "/action" },
 ];
 
 export default function Header() {
@@ -51,10 +51,13 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href={"/create"}
+                target="_blank"
+                href={
+                  "https://chromewebstore.google.com/detail/actionx/bopjneenkbedcakaheonfocnagfdpoeo"
+                }
                 className="bg-[#e9e9e9] text-black py-2 px-4 rounded-lg block lg:inline-block"
               >
-                Get Started
+                Download Extension
               </Link>
             </nav>
           </div>

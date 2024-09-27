@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 import ArrowPointer from "@/components/ArrowPointer";
+import Link from "next/link";
 
 export default function CreateLink() {
   const [address, setAddress] = useState("");
@@ -19,8 +20,8 @@ export default function CreateLink() {
       if (address.length !== 66) {
         setGeneratedLink("");
         toast({
-          title: "Lỗi",
-          description: "Địa chỉ ví không đúng định dạng. Vui lòng nhập lại.",
+          title: "Error",
+          description: "Please enter a valid wallet address.",
           variant: "destructive",
         });
       } else {
@@ -37,8 +38,8 @@ export default function CreateLink() {
 
         setGeneratedLink(link);
         toast({
-          title: "Thành công",
-          description: `Liên kết ${activeTab} đã được tạo thành công.`,
+          title: "Success",
+          description: `${activeTab} Link generated successfully.`,
         });
       }
     }
@@ -98,31 +99,39 @@ export default function CreateLink() {
         </div>
 
         {generatedLink && (
-          <ArrowPointer>
-            <p className="text-black mb-2 font-semibold">{activeTab} Link:</p>
-            <div className="flex items-center">
-              <a
-                href={generatedLink}
-                className="text-blue-500 underline break-all flex-grow mr-2"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {generatedLink}
-              </a>
-              <Button
-                onClick={() => {
-                  navigator.clipboard.writeText(generatedLink);
-                  toast({
-                    title: "Copied",
-                    description: `${activeTab} Link copied to clipboard.`,
-                  });
-                }}
-                className="ml-2 bg-black text-white hover:bg-white hover:text-black transition-colors duration-300"
-              >
-                Copy
-              </Button>
-            </div>
-          </ArrowPointer>
+          <>
+            <ArrowPointer>
+              <p className="text-black mb-2 font-semibold">{activeTab} Link:</p>
+              <div className="flex items-center">
+                <a
+                  href={generatedLink}
+                  className="text-blue-500 underline break-all flex-grow mr-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {generatedLink}
+                </a>
+                <Button
+                  onClick={() => {
+                    navigator.clipboard.writeText(generatedLink);
+                    toast({
+                      title: "Copied",
+                      description: `${activeTab} Link copied to clipboard.`,
+                    });
+                  }}
+                  className="ml-2 bg-black text-white hover:bg-white hover:text-black transition-colors duration-300"
+                >
+                  Copy
+                </Button>
+              </div>
+            </ArrowPointer>
+            <Link
+              href={"/action"}
+              className=" bg-black text-white hover:bg-white hover:text-black transition-colors duration-300"
+            >
+              <Button className="w-full mt-4">Demo Now</Button>
+            </Link>
+          </>
         )}
       </div>
     </main>

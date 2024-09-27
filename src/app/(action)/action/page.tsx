@@ -22,8 +22,8 @@ export default function ActionPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
   const placeholders = [
-    "Enter an Action URL to unfurl it into a Blink",
-    "Provide an Action URL to expand it into a Blink",
+    "Enter an Action URL to unfurl it into a Action",
+    "Provide an Action URL to expand it into a Action",
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,7 +51,7 @@ export default function ActionPage() {
       <GridBackground>
         <div className="w-full h-full">
           <div className="flex flex-col justify-center items-center w-full h-full">
-            <div className="w-[80%] xl:w-[55%] h-[9%] flex items-center justify-center mb-8">
+            <div className=" w-[80%] xl:w-[55%] h-[9%] flex flex-col items-center justify-center mb-8">
               <PlaceholdersAndVanishInput
                 placeholders={placeholders}
                 onChange={handleChange}
