@@ -5,12 +5,11 @@ import "@aptos-labs/wallet-adapter-ant-design/dist/index.css";
 
 // Import SVG dưới dạng React component
 import MenuIcon from "../../assets/icons/menu.svg";
-import { ModeToggle } from "@/components/ui/toggle-theme";
 
 const menuItems = [
   { label: "Documentation", path: "#" },
-  { label: "Create actions", path: "/create" },
   { label: "Demo", path: "/action" },
+  { label: "Create actions", path: "/create" },
 ];
 
 export default function Header() {
