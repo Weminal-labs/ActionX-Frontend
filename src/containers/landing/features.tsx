@@ -1,6 +1,4 @@
-import Image from "next/image";
-import Actions from "@/assets/images/actions/actions.png";
-import Actions1 from "@/assets/images/actions/actions-inmobile.png";
+import { DemoVideoDialog } from "@/components/demo-video-dialog";
 export const Features = () => {
   return (
     <div className="bg-black text-white  ">
@@ -16,14 +14,22 @@ export const Features = () => {
         </div>
       </div>
       <div className="flex justify-center mt-2">
-        <iframe
-          width="590"
-          height="345"
-          src="https://www.youtube.com/embed/_2uPmdfSVmk"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <div className="relative w-[40rem]">
+          <DemoVideoDialog
+            className="dark:hidden block"
+            animationStyle="top-in-bottom-out"
+            videoSrc="https://www.youtube.com/embed/_2uPmdfSVmk"
+            thumbnailSrc="https://i.ibb.co/872W1H7/demo-thumbnail.jpg"
+            thumbnailAlt="Hero Video"
+          />
+          <DemoVideoDialog
+            className="hidden dark:block"
+            animationStyle="top-in-bottom-out"
+            videoSrc="hhttps://www.youtube.com/embed/_2uPmdfSVmk"
+            thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+            thumbnailAlt="Hero Video"
+          />
+        </div>
       </div>
     </div>
   );
