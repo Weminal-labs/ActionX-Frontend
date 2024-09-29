@@ -8,6 +8,7 @@ import { AutoConnectProvider } from "@/components/AutoConnectProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { WalletProvider } from "@/components/WalletProvider";
 import TopLoader from "@/components/TopLoader";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,6 +38,19 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        {/* Google Analytics Script */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-2YFXLDLV8N`}
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2YFXLDLV8N');
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         <AutoConnectProvider>
