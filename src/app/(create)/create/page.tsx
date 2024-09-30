@@ -34,6 +34,8 @@ export default function CreateLink() {
           link = `${baseUrl}/api/actions/mint-nft/${address}`;
         } else if (activeTab === "Voting") {
           link = `${baseUrl}/api/actions/voting/${address}`;
+        } else if (activeTab === "MintNFTGame") {
+          link = `${baseUrl}/api/actions/mint-nft-game/${address}`;
         }
 
         setGeneratedLink(link);
@@ -81,6 +83,13 @@ export default function CreateLink() {
               className="flex-1"
             >
               Voting
+            </Button>
+            <Button
+              variant={activeTab === "MintNFTGame" ? "default" : "secondary"}
+              onClick={() => setActiveTab("MintNFTGame")}
+              className="flex-1"
+            >
+              MintNFTGame
             </Button>
           </div>
 
