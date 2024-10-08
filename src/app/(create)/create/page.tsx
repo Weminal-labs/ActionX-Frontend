@@ -36,6 +36,8 @@ export default function CreateLink() {
           link = `${baseUrl}/api/actions/voting/${address}`;
         } else if (activeTab === "MintNFTGame") {
           link = `${baseUrl}/api/actions/mint-nft-game/${address}`;
+        } else if (activeTab === "PlayGame") {
+          link = `${baseUrl}/api/actions/play-game/${address}`;
         }
 
         setGeneratedLink(link);
@@ -50,58 +52,40 @@ export default function CreateLink() {
   };
 
   return (
-    <main className="flex flex-1 flex-col items-center dark:bg-black">
-      <div className="text-2xl font-bold mt-10 mb-5 text-text-primary">
+    <main className="flex flex-1 flex-col items-center dark:bg-black p-4">
+      <div className="text-xl sm:text-2xl font-bold mt-6 mb-4 text-text-primary text-center">
         Create {activeTab} Link
       </div>
 
       <div className="w-full max-w-md">
-        <div className="w-full cursor-default overflow-hidden rounded-2xl border border-stroke-primary bg-bg-primary shadow-action p-6">
-          <h1 className="text-2xl font-bold mb-4 text-text-primary">
+        <div className="w-full cursor-default overflow-hidden rounded-2xl border border-stroke-primary bg-bg-primary shadow-action p-4 sm:p-6">
+          <h1 className="text-lg sm:text-2xl font-bold mb-3 sm:mb-4 text-text-primary text-center">
             Please enter your wallet address
           </h1>
 
           {/* Tab navigation for switching between actions */}
-          <div className="flex mb-4">
-            <Button
-              variant={activeTab === "Donate" ? "default" : "secondary"}
-              onClick={() => setActiveTab("Donate")}
-              className="flex-1"
-            >
-              Donate
-            </Button>
-            <Button
-              variant={activeTab === "MintNFT" ? "default" : "secondary"}
-              onClick={() => setActiveTab("MintNFT")}
-              className="flex-1"
-            >
-              MintNFT
-            </Button>
-            <Button
-              variant={activeTab === "Voting" ? "default" : "secondary"}
-              onClick={() => setActiveTab("Voting")}
-              className="flex-1"
-            >
-              Voting
-            </Button>
-            <Button
-              variant={activeTab === "MintNFTGame" ? "default" : "secondary"}
-              onClick={() => setActiveTab("MintNFTGame")}
-              className="flex-1"
-            >
-              MintNFTGame
-            </Button>
+          <div className="flex flex-wrap mb-3 sm:mb-4 gap-2">
+            {["Donate", "NFT", "Voting", "MintNFTGame", "PlayGame"].map((tab) => (
+              <Button
+                key={tab}
+                variant={activeTab === tab ? "default" : "secondary"}
+                onClick={() => setActiveTab(tab)}
+                className="flex-1 text-xs sm:text-sm py-1 px-2"
+              >
+                {tab}
+              </Button>
+            ))}
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
             <input
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               placeholder="Enter your wallet address"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="w-full px-2 sm:px-3 py-1 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             />
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" className="w-full text-sm sm:text-base" disabled={isLoading}>
               {isLoading ? "Creating..." : `Create ${activeTab} Link`}
             </Button>
           </form>
@@ -110,11 +94,11 @@ export default function CreateLink() {
         {generatedLink && (
           <>
             <ArrowPointer>
-              <p className="text-black mb-2 font-semibold">{activeTab} Link:</p>
-              <div className="flex items-center">
+              <p className="text-black mb-1 sm:mb-2 font-semibold text-sm sm:text-base">{activeTab} Link:</p>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center">
                 <a
                   href={generatedLink}
-                  className="text-blue-500 underline break-all flex-grow mr-2"
+                  className="text-blue-500 underline break-all flex-grow mr-0 sm:mr-2 text-xs sm:text-sm mb-2 sm:mb-0"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -128,7 +112,7 @@ export default function CreateLink() {
                       description: `${activeTab} Link copied to clipboard.`,
                     });
                   }}
-                  className="ml-2 bg-black text-white hover:bg-white hover:text-black transition-colors duration-300"
+                  className="bg-black text-white hover:bg-white hover:text-black transition-colors duration-300 text-xs sm:text-sm py-1 px-2"
                 >
                   Copy
                 </Button>
@@ -136,9 +120,9 @@ export default function CreateLink() {
             </ArrowPointer>
             <Link
               href={"/action"}
-              className=" bg-black text-white hover:bg-white hover:text-black transition-colors duration-300"
+              className="block bg-black text-white hover:bg-white hover:text-black transition-colors duration-300"
             >
-              <Button className="w-full mt-4">Demo Now</Button>
+              <Button className="w-full mt-3 sm:mt-4 text-sm sm:text-base">Demo Now</Button>
             </Link>
           </>
         )}
