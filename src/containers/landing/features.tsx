@@ -18,15 +18,8 @@ export const Features = () => {
           <DemoVideoDialog
             className="dark:hidden block"
             animationStyle="top-in-bottom-out"
-            videoSrc="https://www.youtube.com/embed/_2uPmdfSVmk"
+            videoSrc="https://www.youtube.com/embed/jTxfJqI2YIQ?si=ZiP48KoVQQmjm6Df"
             thumbnailSrc="https://i.ibb.co/872W1H7/demo-thumbnail.jpg"
-            thumbnailAlt="Hero Video"
-          />
-          <DemoVideoDialog
-            className="hidden dark:block"
-            animationStyle="top-in-bottom-out"
-            videoSrc="hhttps://www.youtube.com/embed/_2uPmdfSVmk"
-            thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
             thumbnailAlt="Hero Video"
           />
         </div>
