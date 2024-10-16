@@ -30,7 +30,7 @@ export default function CreateLink() {
         let link = "";
         if (activeTab === "Donate") {
           link = `${baseUrl}/api/actions/transfer-apt/${address}`;
-        } else if (activeTab === "MintNFT") {
+        } else if (activeTab === "NFT") {
           link = `${baseUrl}/api/actions/mint-nft/${address}`;
         } else if (activeTab === "Voting") {
           link = `${baseUrl}/api/actions/voting/${address}`;
@@ -65,16 +65,18 @@ export default function CreateLink() {
 
           {/* Tab navigation for switching between actions */}
           <div className="flex flex-wrap mb-3 sm:mb-4 gap-2">
-            {["Donate", "NFT", "Voting", "MintNFTGame", "PlayGame"].map((tab) => (
-              <Button
-                key={tab}
-                variant={activeTab === tab ? "default" : "secondary"}
-                onClick={() => setActiveTab(tab)}
-                className="flex-1 text-xs sm:text-sm py-1 px-2"
-              >
-                {tab}
-              </Button>
-            ))}
+            {["Donate", "NFT", "Voting", "MintNFTGame", "PlayGame"].map(
+              (tab) => (
+                <Button
+                  key={tab}
+                  variant={activeTab === tab ? "default" : "secondary"}
+                  onClick={() => setActiveTab(tab)}
+                  className="flex-1 text-xs sm:text-sm py-1 px-2"
+                >
+                  {tab}
+                </Button>
+              )
+            )}
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
@@ -85,7 +87,11 @@ export default function CreateLink() {
               placeholder="Enter your wallet address"
               className="w-full px-2 sm:px-3 py-1 sm:py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             />
-            <Button type="submit" className="w-full text-sm sm:text-base" disabled={isLoading}>
+            <Button
+              type="submit"
+              className="w-full text-sm sm:text-base"
+              disabled={isLoading}
+            >
               {isLoading ? "Creating..." : `Create ${activeTab} Link`}
             </Button>
           </form>
@@ -94,7 +100,9 @@ export default function CreateLink() {
         {generatedLink && (
           <>
             <ArrowPointer>
-              <p className="text-black mb-1 sm:mb-2 font-semibold text-sm sm:text-base">{activeTab} Link:</p>
+              <p className="text-black mb-1 sm:mb-2 font-semibold text-sm sm:text-base">
+                {activeTab} Link:
+              </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center">
                 <a
                   href={generatedLink}
@@ -122,7 +130,9 @@ export default function CreateLink() {
               href={"/action"}
               className="block bg-black text-white hover:bg-white hover:text-black transition-colors duration-300"
             >
-              <Button className="w-full mt-3 sm:mt-4 text-sm sm:text-base">Demo Now</Button>
+              <Button className="w-full mt-3 sm:mt-4 text-sm sm:text-base">
+                Demo Now
+              </Button>
             </Link>
           </>
         )}
