@@ -38,6 +38,18 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
+        <meta name="twitter:card" content="player" /> <!-- Type of card format used for embedding -->
+        <meta name="twitter:site" content="@kayx86" /> <!-- Twitter handle associated with the Dapp -->
+        <meta name="twitter:title" content="Demo ActionX" /> <!-- Title of the Dapp -->
+        <meta name="twitter:description" content="Demo ActionX" /> <!-- Short description of the Dapp -->
+        <meta name="twitter:player" content="https://www.actionxapt.com/action/api-action=https%3A%2F%2Fserver.actionxapt.com%2Fapi%2Factions%2Ftransfer-apt%2F0x508b26b565c7c3a39f332e99544768fabd237ec1e184a1ab8ac7d1cb91879b44" /> <!-- Link to the Dapp -->
+        <meta name="twitter:player:width" content="460" />
+        <meta name="twitter:player:height" content="860" />
+        <meta name="twitter:image" content="https://aptosfoundation.org/brandbook/logomark/PNG/Aptos_mark_BLK.png" /> <!-- Preview image for the card -->
+        <meta property="og:url" content="" />
+        <meta property="og:title" content="test" />
+        <meta property="og:description" content="test" />
+        <meta property="og:image" content="https://aptosfoundation.org/brandbook/logomark/PNG/Aptos_mark_BLK.png" />
         {/* Google Analytics Script */}
         <Script
           strategy="afterInteractive"
