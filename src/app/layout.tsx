@@ -42,7 +42,7 @@ export default function RootLayout({
         <meta name="twitter:site" content="@kayx86" /> 
         <meta name="twitter:title" content="Demo ActionX" /> 
         <meta name="twitter:description" content="Demo ActionX" /> 
-        <meta name="twitter:player" content="https://www.actionxapt.com" />
+        <meta name="twitter:player" content="https://aptosconnect.app/dashboard/main-account/tokens/" />
         <meta name="twitter:player:width" content="460" />
         <meta name="twitter:player:height" content="860" />
         <meta name="twitter:image" content="https://aptosfoundation.org/brandbook/logomark/PNG/Aptos_mark_BLK.png" />
