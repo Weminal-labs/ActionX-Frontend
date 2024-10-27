@@ -42,7 +42,7 @@ export default function RootLayout({
         <meta name="twitter:site" content="@kayx86" /> 
         <meta name="twitter:title" content="Demo ActionX" /> 
         <meta name="twitter:description" content="Demo ActionX" /> 
-        <meta name="twitter:player" content="https://www.actionxapt.com/action/api-action=https%3A%2F%2Fserver.actionxapt.com%2Fapi%2Factions%2Ftransfer-apt%2F0x508b26b565c7c3a39f332e99544768fabd237ec1e184a1ab8ac7d1cb91879b44" />
+        <meta name="twitter:player" content="https://www.actionxapt.com/action/api-action=https%3A%2F%2Fserver.actionxapt.com%2Fapi%2Factions%2Ftransfer-apt%2F0x8531d4c03bfe301fd07d3b0d25ca28a7d98d9ac81f5ba81bc4889b808b19737f" />
         <meta name="twitter:player:width" content="460" />
         <meta name="twitter:player:height" content="860" />
         <meta name="twitter:image" content="https://aptosfoundation.org/brandbook/logomark/PNG/Aptos_mark_BLK.png" />
